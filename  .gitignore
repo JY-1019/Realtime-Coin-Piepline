@@ -1,0 +1,11 @@
+producer/config.json
+producer/__pycache__
+spark-refactoring-v1/config.json
+spark-refactoring-v2/config.json
+.vscode
+producer_copy
+kosdaq*
+token.dat
+monitoring/src/main/resources/env.properties
+monitoring/src/main/java/monitoring/config.properties
+spark-refactoring-v2/config.json

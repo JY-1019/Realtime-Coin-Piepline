@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.0.0'
+}
+
+group = 'monitoring'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+//    maven {
+//        url "https://maven.repository.redhat.com/ga"
+//    }
+}
+
+
+dependencies {
+    implementation 'org.json:json:20231013'
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'com.amazonaws:aws-java-sdk-s3:1.12.461'
+//    implementation 'org.hyperic:sigar:1.6.5.132'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+
+jar {
+    finalizedBy shadowJar
+    manifest {
+        attributes 'Main-Class': 'monitoring.Main'
+    }
+}
+
